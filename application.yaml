@@ -4,7 +4,7 @@ metadata:
   name: my-application
   namespace: argocd  # ArgoCD가 설치된 네임스페이스
 spec:
-  project: default   # ArgoCD 프로젝트 이름
+  project: default
   
   # 소스: Git 저장소 정보
   source:
@@ -26,4 +26,3 @@ spec:
     # 동기화 옵션
     syncOptions:
       - CreateNamespace=true  # 네임스페이스 자동 생성
-      - ApplyOutOfSyncOnly=true
