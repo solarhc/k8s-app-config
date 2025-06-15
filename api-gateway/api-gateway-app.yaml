@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: my-application
+  name: api-gateway
   namespace: argocd  # ArgoCD가 설치된 네임스페이스
 spec:
   project: default
@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/solarhc/k8s-app-config.git
     targetRevision: HEAD  # 브랜치/태그/커밋 해시
-    path: prd
+    path: api-gateway/prd
       
   # 대상: 배포할 클러스터
   destination:
