@@ -14,11 +14,11 @@ spec:
     spec:
       containers:
       - name: k8s-api-gateway
-        image: solarhc/k8s-api-gateway:0.0.1
+        image: solarhc/k8s-api-gateway:0.0.5
         imagePullPolicy: Always
         env:
         - name: SPRING_PROFILES_ACTIVE
-          value: dev
+          value: prd
         ports:
         - containerPort: 8080
 
@@ -33,8 +33,8 @@ spec:
           configMap:
             name: api-gateway-config
             items:
-              - key: application-dev.yml
-                path: application-dev.yml
+              - key: application.yml
+                path: application.yml
         - name: api-gateway-secret-volume
           secret:
             secretName: api-gateway-secret
