@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: k8s-backend-gateway-lb
+  name: k8s-api-gateway-lb
   annotations:
     service.beta.kubernetes.io/aws-load-balancer-type: "nlb"  # Network Load Balancer 사용
     service.beta.kubernetes.io/aws-load-balancer-backend-protocol: "http"
@@ -9,7 +9,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: k8s-backend-gateway
+    app: k8s-api-gateway
   ports:
     - name: http
       protocol: TCP
