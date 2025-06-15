@@ -4,6 +4,7 @@ metadata:
   name: k8s-backend-gateway-lb
   annotations:
     service.beta.kubernetes.io/aws-load-balancer-type: "nlb"  # Network Load Balancer 사용
+    service.beta.kubernetes.io/aws-load-balancer-backend-protocol: "http"
     service.beta.kubernetes.io/aws-load-balancer-scheme: "internet-facing"  # 외부 접근 허용
 spec:
   type: LoadBalancer
